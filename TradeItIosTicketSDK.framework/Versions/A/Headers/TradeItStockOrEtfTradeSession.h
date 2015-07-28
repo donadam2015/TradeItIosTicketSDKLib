@@ -17,17 +17,9 @@
 #import "TradeItStockOrEtfTradeReviewResult.h"
 #import "TradeItStockOrEtfTradeSuccessResult.h"
 #import "TradeItErrorResult.h"
+#import "TradeItTypeDefs.h"
 
 
-typedef void (^TradeItRequestCompletionBlock)(TradeItResult* result);
-/**
- Determine which server to send the request to.
- */
-typedef enum {
-    TradeItEmsProductionEnv,
-    TradeItEmsTestEnv,
-    TradeItEmsLocalEnv
-} TradeitEmsEnvironments;
 
 /**
  *  Main class to manage authenticating sending orders to the Trade It Execution Management System (EMS). For each order a new session needs to be instantiated or reset should be called on the current session in order to clear the session order broker and authentication information.
@@ -65,6 +57,13 @@ typedef enum {
  *  Provide a full URL to recieve a POST response containing the details of a submitted order. Note, the EMS server does not return user data, if you wish to track a user you'll need to use your internal identifier in the url i.e. https://www.mytradesite.com/tradeitcallback/?user=12345
  */
 @property (copy) NSString * postbackURL;
+
+/**
+ *  Determine wethere or not to call the completion block for async functions on main thread or background thread.
+ *  Default value is true
+ *  set to false if the completion block is not making any UI changes otherwise it will need to be set to true
+ */
+@property BOOL runAsyncCompletionBlockOnMainThread;
 
 /**
  *  init a session with you app name provided by Trade it
