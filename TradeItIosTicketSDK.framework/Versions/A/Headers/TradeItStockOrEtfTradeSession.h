@@ -130,6 +130,14 @@
  */
 - (void) reset;
 
+/**
+ *  *   Return an array with all the broker that support stockOrEtfTrading and are enabled for a given publisher
+ *   make sure to set the publisherApp before calling this method
+ *
+ *  @return Array NSDictionary objects, where each object has a "longName" and "shortName". The longName should be displauyed to the user and the short name should be used wbe sending a request to the ems server
+
+ */
+- (NSArray*) getBrokerList;
 
 /** @name async version of the apis @see synchronous version for description */
 
@@ -139,4 +147,6 @@
 - (void) asyncSelectAccount: (NSDictionary*) accountInfo andCompletionBlock:(TradeItRequestCompletionBlock) completionBlock;
 - (void) asyncPlaceOrderWithCompletionBlock:(TradeItRequestCompletionBlock) completionBlock;
 - (void) asyncCloseSessionWithCompletionBlock:(void (^)(BOOL)) completionBlock;
+- (void) asyncGetBrokerListWithCompletionBlock:(void (^)(NSArray* )) completionBlock;
+
 @end
