@@ -1,4 +1,4 @@
-# Latest Version 1.0.1
+# Latest Version 1.0.4
 The latest version has 1 breaking change if you are currently using the completion callback. We've added in a TradeItTicketControllerResult so you're able to see where the user was at when they left the ticket. Please refer to [TradeItIosEmsApiLib](https://github.com/tradingticket/TradeItIosEmsApiLib) for more information about the TradeItIosEms result objects.
 
 Additionally there is now a more detailed calculator screen for the user to choose or for you to default when you initialize the ticket yourself, see TradeItTicketController.h for more information.
