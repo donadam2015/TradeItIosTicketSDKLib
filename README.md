@@ -1,4 +1,7 @@
-# Latest Version 1.0.6
+# Latest Version 1.0.8
+Bug fixes for locale and currency formating, small bug fixes on login screen layout. Transitioned to UIAlertControllers in preparation of iOS 9
+
+# Version 1.0.6
 Now using a better namespaced version of the JSONModel library as to not conflict with anyone using the Coca Pods version, this is a potentially breaking change.
 
 # Version 1.0.4
