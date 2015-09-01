@@ -1,4 +1,7 @@
-# Latest Version 1.0.8
+# Version 1.0.9
+Bug fixes for UIAlertControllers not consistently displaying. 
+
+# Version 1.0.8
 Bug fixes for locale and currency formating, small bug fixes on login screen layout. Transitioned to UIAlertControllers in preparation of iOS 9
 
 # Version 1.0.6
