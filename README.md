@@ -1,3 +1,6 @@
+# Latest Version 1.0.10
+UITweaks - FirstResponder on login page, Broker/Account selects as action sheets
+
 # Version 1.0.9
 Bug fixes for UIAlertControllers not consistently displaying. 
 
