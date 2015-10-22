@@ -1,4 +1,7 @@
-# Latest Version 1.0.11
+# Latest Version 1.0.12
+Fix for iPads not correctly loading the storyboard, resulting in app crash
+
+# Version 1.0.11
 Updates to work better with XCode7, implemented fallbacks to better support iOS7.1
 
 # Version 1.0.10
