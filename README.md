@@ -1,4 +1,7 @@
-# Latest Version 1.0.12
+# Latest Version 1.0.13
+Added in TradeItAuthController.h to add in a handful of functions to help setup the broker association outside the normal trading ticket flow
+
+# Version 1.0.12
 Fix for iPads not correctly loading the storyboard, resulting in app crash
 
 # Version 1.0.11
