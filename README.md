@@ -1,4 +1,7 @@
-# Latest Version 1.0.13
+# Latest Version 1.0.14
+Bug fix for Dummy always showing when using the auth controller link brokerage function
+
+# 1.0.13
 Added in TradeItAuthController.h to add in a handful of functions to help setup the broker association outside the normal trading ticket flow
 
 # Version 1.0.12
