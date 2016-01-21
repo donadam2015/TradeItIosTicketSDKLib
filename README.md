@@ -1,4 +1,8 @@
-# Latest Version 1.0.14
+# Latest Version 1.0.15
+Fixed support for bitcode #25
+Fixed spacing display issue #23
+
+# Version 1.0.14
 Bug fix for Dummy always showing when using the auth controller link brokerage function
 
 # 1.0.13
