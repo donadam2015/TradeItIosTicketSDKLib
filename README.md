@@ -1,4 +1,7 @@
-# Latest Version 1.0.15
+# Latest Version 1.0.16
+Fixes iPad crash issue #30
+
+# Version 1.0.15
 Fixed support for bitcode #25
 Fixed spacing display issue #23
 
