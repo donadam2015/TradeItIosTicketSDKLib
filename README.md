@@ -1,4 +1,17 @@
-# Latest Version 1.0.16
+# Latest Version 2.0.0
+Complete ticket redesign
+
+Improved authentication flow
+
+New feature: change order symbol directly inside ticket
+
+New feature: Portfolio View
+#####What is Portfolio View?
+* Real-time account aggregation
+* View and trade holdings
+* Ability to launch directly to Portfolio
+
+# Version 1.0.16
 Fixes iPad crash issue #30
 
 # Version 1.0.15
@@ -25,19 +38,31 @@ Check the Copy items into destination group’s folder box, and click Finish.
 You'll also need to add the LocalAuthentication.framework for TouchId. Go to your general build settings and in the "Linked Frameworks and Libraries" secion click "+" and search for it in the list.
 
 ##Full View Ticket
-This is the main method of launching the TradeIt trading ticket. 
+This is the main method for launching the TradeIt ticket.
 
 	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
+	// trading ticket
 	- (IBAction)launchTicket:(id)sender {
-    	[TradeItTicketController showFullTicketWithPublisherApp: @"TESTAPP" symbol:@"GE" lastPrice:26.25 viewController:self];
+    	[TradeItTicketController showTicketWithApiKey: @"YOUR-API-KEY" symbol: @"GE" viewController: self];
+	}
+
+	// portfolio ticket
+	- (IBAction)launchTicket:(id)sender {
+		[TradeItTicketController showPortfolioWithApiKey: @"YOUR-API-KEY" viewController: self];
 	}
 
 ##Debugging/Setup
-Should you want to test the full flow of the app, you can use our dummy broker as documented in TradeItIosEmsApi. To enable the dummy broker on the ticket use the debug version of the full ticket view:
+Should you want to test the full flow of the app, you can use our dummy broker as documented in TradeItIosEmsApi. To enable the dummy broker on the ticket, use the full method call and set the 'withDebug' property:
 
 	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
+	// debug trading ticket
 	- (IBAction)launchTicket:(id)sender {
-    	[TradeItTicketController debugShowFullTicketWithPublisherApp: @"TESTAPP" symbol:@"GE" lastPrice:26.25 viewController:self onCompletion:nil];
+		[TradeItTicketController showTicketWithApiKey: @"YOUR-API-KEY" symbol: @"GE" orderAction: @"buy" orderQuantity: @1 viewController: self withDebug: YES onCompletion: nil];
+	}
+
+	// debug portfolio ticket
+	- (IBAction)launchTicket:(id)sender {
+		[TradeItTicketController showPortfolioWithApiKey: @"YOUR-API-KEY" viewController: self withDebug: YES onCompletion: nil];
 	}
