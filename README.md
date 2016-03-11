@@ -1,3 +1,11 @@
+# Latest Version 2.0.2
+
+Fixed minor UI bugs
+
+Fixed various breaking issues in new design
+
+Various design improvements
+
 # Latest Version 2.0.0
 Complete ticket redesign
 
