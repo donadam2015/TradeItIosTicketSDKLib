@@ -1,3 +1,11 @@
+# Latest Version 2.0.3
+
+Fixed null holdings on portfolio screen
+
+Fixed intermittent infinite loading on portfolio screen
+
+Fixed account selection style not appearing on portfolio screen
+
 # Latest Version 2.0.2
 
 Fixed minor UI bugs
