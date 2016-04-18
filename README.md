@@ -74,12 +74,12 @@ This is the main method for launching the TradeIt ticket.
 
 	// trading ticket
 	- (IBAction)launchTicket:(id)sender {
-    	[TradeItTicketController showTicketWithApiKey: @"YOUR-API-KEY" symbol: @"GE" viewController: self];
+    	[TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
 	}
 
 	// portfolio ticket
 	- (IBAction)launchPortfolio:(id)sender {
-		[TradeItTicketController showPortfolioWithApiKey: @"YOUR-API-KEY" viewController: self];
+		[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
 	}
 
 ##Partial View Ticket
@@ -89,17 +89,17 @@ This is the method for restricting user flow to either authentication, trading, 
 	
 	// authentication
 	- (IBAction)launchAuthOnly:(id)sender {
-	[TradeItTicketController showAuthenticationWithApiKey: @"YOUR-API-KEY" viewController: self onCompletion: nil];
+	[TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
 	}
 
 	// trading
 	- (IBAction)launchTicketOnly:(id)sender {
-	[TradeItTicketController showRestrictedTicketWithApiKey: @"YOUR-API-KEY" symbol: @"GE" viewController:self];
+	[TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
 	}
 	
 	// portfolio
 	- (IBAction)launchPortfolioOnly:(id)sender {
-	[TradeItTicketController showRestrictedPortfolioWithApiKey: @"YOUR-API-KEY" viewController: self];
+	[TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
 	}
 
 Alternatively, if you instantiate the ticket, you can manually set the flow using presentationMode:
@@ -108,7 +108,7 @@ Alternatively, if you instantiate the ticket, you can manually set the flow usin
 	
 	// trading
 	- (IBAction)launchTicket:(id)sender {
-	TradeItTicketController * ticket = [[TradeItTicketController alloc] initWithApiKey: @"YOUR-API-KEY" symbol: @"GE" viewController: self];
+	TradeItTicketController * ticket = [[TradeItTicketController alloc] initWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
 	// choose one of the following:
 	ticket.presentationMode = TradeItPresentationModeAuth;
 	ticket.presentationMode = TradeItPresentationModeTradeOnly;
@@ -122,10 +122,10 @@ Should you want to test the full flow of the app, you can use our dummy broker a
 
 	// debug trading ticket
 	- (IBAction)launchTicket:(id)sender {
-		[TradeItTicketController showTicketWithApiKey: @"YOUR-TEST-API-KEY" symbol: @"GE" orderAction: @"buy" orderQuantity: @1 viewController: self withDebug: YES onCompletion: nil];
+		[TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" orderAction: @"buy" orderQuantity: @1 viewController: self withDebug: YES onCompletion: nil];
 	}
 
 	// debug portfolio ticket
 	- (IBAction)launchPortfolio:(id)sender {
-		[TradeItTicketController showPortfolioWithApiKey: @"YOUR-TEST-API-KEY" viewController: self withDebug: YES onCompletion: nil];
+		[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self withDebug: YES onCompletion: nil];
 	}
