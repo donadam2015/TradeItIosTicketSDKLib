@@ -1,3 +1,10 @@
+# Latest Version 2.1.2
+
+Fixes:
+
+- launch performance issues
+- cursors missing on input fields
+
 # Latest Version 2.1.0
 
 Fixes:
