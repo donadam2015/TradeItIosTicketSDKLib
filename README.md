@@ -1,3 +1,13 @@
+# Latest Version 2.1.3
+
+Fixes:
+
+- improve portfolio loading flow
+
+Features:
+
+- allow users to manually refresh quotes on price tap
+
 # Latest Version 2.1.2
 
 Fixes:
