@@ -1,3 +1,8 @@
+# Latest Version 2.1.4
+
+- Account and Action now shows in review screen
+- Option to close ticket on trade confirmation screen
+
 # Latest Version 2.1.3
 
 Fixes:
