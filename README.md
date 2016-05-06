@@ -1,9 +1,15 @@
-# Latest Version 2.1.4
+# Latest Version 2.2
+
+- UX improvements
+- Stability and performance bug fixes
+- Additional support for EMS Library
+
+# Version 2.1.4
 
 - Account and Action now shows in review screen
 - Option to close ticket on trade confirmation screen
 
-# Latest Version 2.1.3
+# Version 2.1.3
 
 Fixes:
 
@@ -13,14 +19,14 @@ Features:
 
 - allow users to manually refresh quotes on price tap
 
-# Latest Version 2.1.2
+# Version 2.1.2
 
 Fixes:
 
 - launch performance issues
 - cursors missing on input fields
 
-# Latest Version 2.1.0
+# Version 2.1.0
 
 Fixes:
 
@@ -34,7 +40,7 @@ Features:
 - now using QA api key for debug mode
 - single, restricted flows now available. Choose auth, trade, or portfolio
 
-# Latest Version 2.0.3
+# Version 2.0.3
 
 Fixed null holdings on portfolio screen
 
@@ -42,42 +48,13 @@ Fixed intermittent infinite loading on portfolio screen
 
 Fixed account selection style not appearing on portfolio screen
 
-# Latest Version 2.0.2
+# Version 2.0.2
 
 Fixed minor UI bugs
 
 Fixed various breaking issues in new design
 
 Various design improvements
-
-# Latest Version 2.0.0
-Complete ticket redesign
-
-Improved authentication flow
-
-New feature: change order symbol directly inside ticket
-
-New feature: Portfolio View
-#####What is Portfolio View?
-* Real-time account aggregation
-* View and trade holdings
-* Ability to launch directly to Portfolio
-
-# Version 1.0.16
-Fixes iPad crash issue #30
-
-# Version 1.0.15
-Fixed support for bitcode #25
-Fixed spacing display issue #23
-
-# Version 1.0.14
-Bug fix for Dummy always showing when using the auth controller link brokerage function
-
-# 1.0.13
-Added in TradeItAuthController.h to add in a handful of functions to help setup the broker association outside the normal trading ticket flow
-
-# Version 1.0.12
-Fix for iPads not correctly loading the storyboard, resulting in app crash
 
 # TradeItIosTicketSDKLib
 Framework to launch TradeIt trading tickets. This Framework is built off the TradeIt TradeItIosEmsApi library and as such exposes all the TradeItIosEmsApi headers should you want to use the TradeItIosEmsApi directly, however, this generally isn't needed.
