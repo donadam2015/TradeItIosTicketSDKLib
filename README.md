@@ -26,36 +26,6 @@ Fixes:
 - launch performance issues
 - cursors missing on input fields
 
-# Version 2.1.0
-
-Fixes:
-
-- intermittent infinite loading
-- touch ID failure
-- various small issues
-
-Features:
-
-- simplified order type flow
-- now using QA api key for debug mode
-- single, restricted flows now available. Choose auth, trade, or portfolio
-
-# Version 2.0.3
-
-Fixed null holdings on portfolio screen
-
-Fixed intermittent infinite loading on portfolio screen
-
-Fixed account selection style not appearing on portfolio screen
-
-# Version 2.0.2
-
-Fixed minor UI bugs
-
-Fixed various breaking issues in new design
-
-Various design improvements
-
 # TradeItIosTicketSDKLib
 Framework to launch TradeIt trading tickets. This Framework is built off the TradeIt TradeItIosEmsApi library and as such exposes all the TradeItIosEmsApi headers should you want to use the TradeItIosEmsApi directly, however, this generally isn't needed.
 
