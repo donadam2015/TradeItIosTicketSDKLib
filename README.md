@@ -1,4 +1,8 @@
-# Latest Version 2.2
+# Latest Version 2.2.1
+
+- Small UI fix for Accounts screen
+
+# Version 2.2
 
 - UX improvements
 - Stability and performance bug fixes
