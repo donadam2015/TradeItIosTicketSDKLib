@@ -1,4 +1,8 @@
-# Latest Version 2.2.1
+# Version 2.2.2
+
+- Adds guards against empty order values
+
+# Version 2.2.1
 
 - Small UI fix for Accounts screen
 
@@ -39,6 +43,18 @@ To use the library you'll want to drag both TradeItIosTicketSDK.framework and Tr
 Check the Copy items into destination group’s folder box, and click Finish.
 
 You'll also need to add the LocalAuthentication.framework for TouchId. Go to your general build settings and in the "Linked Frameworks and Libraries" secion click "+" and search for it in the list.
+
+##Specifying parameters for the TradeIt ticket
+When setting order parameters in the ticket, follow the conventions listed in our API documentation:
+
+Order Quantity: only positive integers
+
+Order Action: buy, sell, buyToCover, sellShort
+
+Order Type: market, limit, stopMarket, stopLimit
+
+For more information, visit https://www.trade.it/documentation/api#PreviewTrade
+
 
 ##Full View Ticket
 This is the main method for launching the TradeIt ticket.
