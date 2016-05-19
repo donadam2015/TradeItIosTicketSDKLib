@@ -1,3 +1,7 @@
+# Version 2.2.4
+
+- Adds Open Account screen
+
 # Version 2.2.2
 
 - Adds guards against empty order values
