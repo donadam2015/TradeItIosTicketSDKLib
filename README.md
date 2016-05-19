@@ -1,4 +1,4 @@
-# Version 2.2.4
+# Latest Version 2.2.4
 
 - Adds Open Account screen
 
