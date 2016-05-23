@@ -1,4 +1,9 @@
-# Latest Version 2.2.4
+# Latest Version 2.2.5
+
+- Several improvements and fixes for review screen
+- Replaces N/A values with loading indicators
+
+# Version 2.2.4
 
 - Adds Open Account screen
 
