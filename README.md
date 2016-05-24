@@ -2,7 +2,7 @@
 
 - Improves handling for empty holdings values
 
-# Latest Version 2.2.5
+# Version 2.2.5
 
 - Several improvements and fixes for review screen
 - Replaces N/A values with loading indicators
