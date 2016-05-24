@@ -1,3 +1,7 @@
+# Latest Version 2.2.6
+
+- Improves handling for empty holdings values
+
 # Latest Version 2.2.5
 
 - Several improvements and fixes for review screen
