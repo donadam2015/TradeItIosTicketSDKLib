@@ -1,4 +1,8 @@
-# Latest Version 2.2.6
+# Latest Version 2.2.7
+
+- Removes info.plist flags that prevent deployment
+
+# Version 2.2.6
 
 - Improves handling for empty holdings values
 
