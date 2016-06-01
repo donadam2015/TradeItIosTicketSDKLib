@@ -25,6 +25,7 @@
 @property UIColor * darkPageBackgroundColor;
 
 #pragma mark Navigation Colors
+@property UIStatusBarStyle statusBarStyle;
 @property UIColor * navigationBarBackgroundColor;
 @property UIColor * navigationBarItemColor;
 @property UIColor * navigationBarTitleColor;
@@ -44,6 +45,7 @@
 #pragma mark Peripheral Colors
 @property UIColor * switchColor;
 @property UIColor * primarySeparatorColor;
+@property UIColor * alertBackgroundColor;
 
 #pragma mark Buttons
 @property UIButton * primaryInactiveButton;
