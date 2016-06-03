@@ -72,41 +72,55 @@ Order Type: market, limit, stopMarket, stopLimit
 
 For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 
+#Launch Methods
 
-##Full View Ticket
-This is the main method for launching the TradeIt ticket.
+##Launch to Trade screen
+<img src="https://www.trade.it/images/guide/trade.png" width="200">
 
 	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
-	// trading ticket
 	- (IBAction)launchTicket:(id)sender {
     	[TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
 	}
 
-	// portfolio ticket
+	// restrict the ticket to only show Trade
+	- (IBAction)launchTicketOnly:(id)sender {
+	[TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
+	}
+
+##Launch to Portfolio screen
+<img src="https://www.trade.it/images/guide/portfolio.png" width="200">
+
+	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+
 	- (IBAction)launchPortfolio:(id)sender {
 		[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
 	}
 
-##Partial View Ticket
-This is the method for restricting user flow to either authentication, trading, or portfolio. This will remove the bottom tab bar used for trade-portfolio navigation.
+	// restrict the ticket to only show Portfolio
+	- (IBAction)launchPortfolioOnly:(id)sender {
+	[TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
+	}
+
+##Launch to Account Selection screen
+<img src="https://www.trade.it/images/guide/account_select.png" width="200">
 
 	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-	
-	// authentication
+
+	- (IBAction)launchAccountSelection:(id)sender {
+	[TradeItTicketController showAccountsWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
+	}
+
+##Launch Login flow
+<img src="https://www.trade.it/images/guide/onboarding.png" width="200">
+
+	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+
 	- (IBAction)launchAuthOnly:(id)sender {
 	[TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
 	}
 
-	// trading
-	- (IBAction)launchTicketOnly:(id)sender {
-	[TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
-	}
-	
-	// portfolio
-	- (IBAction)launchPortfolioOnly:(id)sender {
-	[TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
-	}
+##Launch via instantiation
 
 Alternatively, if you instantiate the ticket, you can manually set the flow using presentationMode:
 
@@ -119,6 +133,7 @@ Alternatively, if you instantiate the ticket, you can manually set the flow usin
 	ticket.presentationMode = TradeItPresentationModeAuth;
 	ticket.presentationMode = TradeItPresentationModeTradeOnly;
 	ticket.presentationMode = TradeItPresentationModePortfolioOnly;
+	[ticket showTicket];
 	}
 
 ##Debugging/Setup
