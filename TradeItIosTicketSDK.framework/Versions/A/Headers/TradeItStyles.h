@@ -46,6 +46,8 @@
 @property UIColor * switchColor;
 @property UIColor * primarySeparatorColor;
 @property UIColor * alertBackgroundColor;
+@property UIColor * alertTextColor;
+@property UIColor * alertButtonColor;
 
 #pragma mark Buttons
 @property UIButton * primaryInactiveButton;
