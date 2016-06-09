@@ -1,4 +1,10 @@
-# Latest Version 2.2.7
+# Latest Version 2.3.0
+
+- Adds customizable UI colors
+- Fixes rotation issue with landscape-only applications
+- Adds ability to launch directly to Open Account screen
+
+# Version 2.2.7
 
 - Removes info.plist flags that prevent deployment
 
@@ -10,46 +16,6 @@
 
 - Several improvements and fixes for review screen
 - Replaces N/A values with loading indicators
-
-# Version 2.2.4
-
-- Adds Open Account screen
-
-# Version 2.2.2
-
-- Adds guards against empty order values
-
-# Version 2.2.1
-
-- Small UI fix for Accounts screen
-
-# Version 2.2
-
-- UX improvements
-- Stability and performance bug fixes
-- Additional support for EMS Library
-
-# Version 2.1.4
-
-- Account and Action now shows in review screen
-- Option to close ticket on trade confirmation screen
-
-# Version 2.1.3
-
-Fixes:
-
-- improve portfolio loading flow
-
-Features:
-
-- allow users to manually refresh quotes on price tap
-
-# Version 2.1.2
-
-Fixes:
-
-- launch performance issues
-- cursors missing on input fields
 
 # TradeItIosTicketSDKLib
 Framework to launch TradeIt trading tickets. This Framework is built off the TradeIt TradeItIosEmsApi library and as such exposes all the TradeItIosEmsApi headers should you want to use the TradeItIosEmsApi directly, however, this generally isn't needed.
