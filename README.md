@@ -86,6 +86,28 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 	[TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
 	}
 
+##Launch to Open Account screen
+<img src="https://www.trade.it/images/guide/broker_center.jpg" width="200">
+
+Before launching the Open Account screen, TradeIt needs to retrieve configuration data. For best performance, call the following method sometime before launching the screen:
+
+	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	  [TradeItTicketController initializePublisherData: @"tradeit-test-api-key" onLoad: ^(BOOL brokerCenterActive){
+            // use boolean*
+          }];
+	  return YES;
+	}
+
+*The onLoad callback passes a boolean that determines whether the Open Account feature is available.
+
+To launch the Open Account screen itself:
+	
+	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+
+	[TradeItTicketController showBrokerCenterWithApiKey:@"tradeit-test-api-key" viewController:self];
+
 ##Launch via instantiation
 
 Alternatively, if you instantiate the ticket, you can manually set the flow using presentationMode:
