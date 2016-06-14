@@ -1,4 +1,8 @@
-# Latest Version 2.3.0
+# Latest Version 2.3.1
+
+- Adds ability to launch portfolio with specific account selected
+
+# Version 2.3.0
 
 - Adds customizable UI colors
 - Fixes rotation issue with landscape-only applications
@@ -66,6 +70,20 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 	// restrict the ticket to only show Portfolio
 	- (IBAction)launchPortfolioOnly:(id)sender {
 	[TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
+	}
+
+##Launch to Portfolio screen, with specific account selected
+
+	#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+
+	- (void)viewDidLoad {
+		NSArray * linkedAccounts = [TradeItTicketController getLinkedAccounts];
+		NSDictionary * firstAccount = [linkedAccounts objectAtIndex: 0];
+		self.selectedAccountNumber = [firstAccount valueForKey: @"accountNumber"];
+	}
+
+	- (IBAction)launchPortfolio:(id)sender {
+		[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self accountNumber: self.selectedAccountNumber];
 	}
 
 ##Launch to Account Selection screen
