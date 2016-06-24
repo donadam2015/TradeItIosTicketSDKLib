@@ -51,112 +51,112 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 ##Launch to Trade screen
 <img src="https://www.trade.it/images/guide/trade.png" width="200">
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
-- (IBAction)launchTicket:(id)sender {
-[TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
-}
+    - (IBAction)launchTicket:(id)sender {
+    [TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
+    }
 
-// restrict the ticket to only show Trade
-- (IBAction)launchTicketOnly:(id)sender {
-[TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
-}
+    // restrict the ticket to only show Trade
+    - (IBAction)launchTicketOnly:(id)sender {
+    [TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
+    }
 
 ##Launch to Portfolio screen
 <img src="https://www.trade.it/images/guide/portfolio.png" width="200">
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    - (IBAction)launchPortfolio:(id)sender {
+    [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
+    }
 
-- (IBAction)launchPortfolio:(id)sender {
-[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
-}
-
-// restrict the ticket to only show Portfolio
-- (IBAction)launchPortfolioOnly:(id)sender {
-[TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
-}
+    // restrict the ticket to only show Portfolio
+    - (IBAction)launchPortfolioOnly:(id)sender {
+    [TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
+    }
 
 ##Launch to Portfolio screen, with specific account selected
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    - (void)viewDidLoad {
+    NSArray * linkedAccounts = [TradeItTicketController getLinkedAccounts];
+    NSDictionary * firstAccount = [linkedAccounts objectAtIndex: 0];
+    self.selectedAccountNumber = [firstAccount valueForKey: @"accountNumber"];
+    }
 
-- (void)viewDidLoad {
-NSArray * linkedAccounts = [TradeItTicketController getLinkedAccounts];
-NSDictionary * firstAccount = [linkedAccounts objectAtIndex: 0];
-self.selectedAccountNumber = [firstAccount valueForKey: @"accountNumber"];
-}
-
-- (IBAction)launchPortfolio:(id)sender {
-[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self accountNumber: self.selectedAccountNumber];
-}
+    - (IBAction)launchPortfolio:(id)sender {
+    [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self accountNumber: self.selectedAccountNumber];
+    }
 
 ##Launch to Account Selection screen
 <img src="https://www.trade.it/images/guide/account_select.png" width="200">
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-- (IBAction)launchAccountSelection:(id)sender {
-[TradeItTicketController showAccountsWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
-}
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    - (IBAction)launchAccountSelection:(id)sender {
+    [TradeItTicketController showAccountsWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
+    }
 
 ##Launch Login flow
 <img src="https://www.trade.it/images/guide/onboarding.png" width="200">
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-- (IBAction)launchAuthOnly:(id)sender {
-[TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
-}
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    - (IBAction)launchAuthOnly:(id)sender {
+    [TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
+    }
 
 ##Launch to Open Account screen
 <img src="https://www.trade.it/images/guide/broker_center.jpg" width="200">
 
 Before launching the Open Account screen, TradeIt needs to retrieve configuration data. For best performance, call the following method sometime before launching the screen:
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-[TradeItTicketController initializePublisherData: @"tradeit-test-api-key" onLoad: ^(BOOL brokerCenterActive){
-// use boolean*
-}];
-return YES;
-}
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [TradeItTicketController initializePublisherData: @"tradeit-test-api-key" onLoad: ^(BOOL brokerCenterActive){
+    // use boolean*
+    }];
+    return YES;
+    }
 
 *The onLoad callback passes a boolean that determines whether the Open Account feature is available.
 
 To launch the Open Account screen itself:
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-[TradeItTicketController showBrokerCenterWithApiKey:@"tradeit-test-api-key" viewController:self];
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    [TradeItTicketController showBrokerCenterWithApiKey:@"tradeit-test-api-key" viewController:self];
 
 ##Launch via instantiation
 
 Alternatively, if you instantiate the ticket, you can manually set the flow using presentationMode:
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-// trading
-- (IBAction)launchTicket:(id)sender {
-TradeItTicketController * ticket = [[TradeItTicketController alloc] initWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
-// choose one of the following:
-ticket.presentationMode = TradeItPresentationModeAuth;
-ticket.presentationMode = TradeItPresentationModeTradeOnly;
-ticket.presentationMode = TradeItPresentationModePortfolioOnly;
-[ticket showTicket];
-}
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    // trading
+    - (IBAction)launchTicket:(id)sender {
+    TradeItTicketController * ticket = [[TradeItTicketController alloc] initWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
+    // choose one of the following:
+    ticket.presentationMode = TradeItPresentationModeAuth;
+    ticket.presentationMode = TradeItPresentationModeTradeOnly;
+    ticket.presentationMode = TradeItPresentationModePortfolioOnly;
+    [ticket showTicket];
+    }
 
 ##Debugging/Setup
 Should you want to test the full flow of the app, you can use our dummy broker as documented in TradeItIosEmsApi. To enable the dummy broker on the ticket, use the full method call and set the 'withDebug' property. Keep in mind that you must use your QA api key when in debug mode. Also, you will need to reset your NSUserDefaults between debug and production sessions, as your saved authentication data is particular to the server environment:
 
-#import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-
-// debug trading ticket
-- (IBAction)launchTicket:(id)sender {
-[TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" orderAction: @"buy" orderQuantity: @1 viewController: self withDebug: YES onCompletion: nil];
-}
-
-// debug portfolio ticket
-- (IBAction)launchPortfolio:(id)sender {
-[TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self withDebug: YES onCompletion: nil];
-}
+    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
+    
+    // debug trading ticket
+    - (IBAction)launchTicket:(id)sender {
+    [TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" orderAction: @"buy" orderQuantity: @1 viewController: self withDebug: YES onCompletion: nil];
+    }
+    
+    // debug portfolio ticket
+    - (IBAction)launchPortfolio:(id)sender {
+    [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self withDebug: YES onCompletion: nil];
+    }
