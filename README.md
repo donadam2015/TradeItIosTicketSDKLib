@@ -49,7 +49,7 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 #Launch Methods
 
 ##Launch the Trade screen
-<img src="https://www.trade.it/images/guide/trading-flow.png" width="200">
+<img src="https://www.trade.it/images/guide/trading-flow.png">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
@@ -63,7 +63,7 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     }
 
 ##Launch the Portfolio screen
-<img src="https://www.trade.it/images/guide/portfolio-flow.png" width="200">
+<img src="https://www.trade.it/images/guide/portfolio-flow.png">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
@@ -116,7 +116,7 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     }];
     
 ##Launch the Account Setup screen
-<img src="https://www.trade.it/images/guide/login flow.png" width="200">
+<img src="https://www.trade.it/images/guide/login flow.png">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
