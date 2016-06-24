@@ -76,7 +76,7 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
     }
 
-##Launch the Portfolio screen, with specific account selected: This is useful if you app displays a list of all the accounts that user can click on
+#### Launch the Portfolio screen, with specific account selected: This is useful if you app displays a list of all the accounts that user can click on
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
@@ -90,7 +90,8 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self accountNumber: self.selectedAccountNumber];
     }
     
-##If you would like to pull in a users holdings/portfolio data to screens outside of the SDK, then use the code below. Note that this code will launch the authentication flow and handle any security questions if the user is not already authenticated.
+#### If you would like to pull in a users holdings/portfolio data to screens outside of the SDK, then use the code below.
+Note: that this code will launch the authentication flow and handle any security questions if the user is not already authenticated.
 
     - [TradeItTicketController getSessions: self withApiKey:@"tradeit-test-api-key"
         onCompletion:^(NSArray *sessions) {
@@ -124,10 +125,12 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showAccountsWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
     }
 
-##Launch the Promotional Broker Center
+##Launch the Promotional Broker Center.
+Any account opening revenues from the Broker Center will be shared with the app developper. Please contact TradeIt for more details
+
 <img src="https://www.trade.it/images/guide/broker_center.jpg" width="200">
 
-Before launching the Open Account screen, TradeIt needs to retrieve configuration data. For best performance, call the following method sometime before launching the screen:
+Before launching the Broker Center, TradeIt needs to retrieve configuration data. For best performance, call the following method sometime before launching the screen:
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
