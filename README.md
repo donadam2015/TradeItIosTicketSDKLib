@@ -48,8 +48,8 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
 
 #Launch Methods
 
-##Launch to Trade screen
-<img src="https://www.trade.it/images/guide/trade.png" width="200">
+##Launch the Trade screen
+<img src="https://www.trade.it/images/guide/trading-flow.png" width="200">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
 
@@ -57,13 +57,13 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController: self];
     }
 
-    // restrict the ticket to only show Trade
+    // restrict the ticket to only show Trade.Use this method if yur app does not want to show the TradeIT portfolio from the trading ticket
     - (IBAction)launchTicketOnly:(id)sender {
     [TradeItTicketController showRestrictedTicketWithApiKey: @"tradeit-test-api-key" symbol: @"GE" viewController:self];
     }
 
-##Launch to Portfolio screen
-<img src="https://www.trade.it/images/guide/portfolio.png" width="200">
+##Launch the Portfolio screen
+<img src="https://www.trade.it/images/guide/portfolio-flow.png" width="200">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
@@ -71,12 +71,12 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
     }
 
-    // restrict the ticket to only show Portfolio
+    // restrict the ticket to only show Portfolio. Use this method if yur app does not want to show the TradeIT trading ticket for the portfolio
     - (IBAction)launchPortfolioOnly:(id)sender {
     [TradeItTicketController showRestrictedPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self];
     }
 
-##Launch to Portfolio screen, with specific account selected
+##Launch the Portfolio screen, with specific account selected: This is useful if you app displays a list of all the accounts that user can click on
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
@@ -89,9 +89,34 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     - (IBAction)launchPortfolio:(id)sender {
     [TradeItTicketController showPortfolioWithApiKey: @"tradeit-test-api-key" viewController: self accountNumber: self.selectedAccountNumber];
     }
+    
+##If you would like to pull in a users holdings/portfolio data to screens outside of the SDK, then use the code below. Note that this code will launch the authentication flow and handle any security questions if the user is not already authenticated.
 
-##Launch to Account Selection screen
-<img src="https://www.trade.it/images/guide/account_select.png" width="200">
+    - [TradeItTicketController getSessions: self withApiKey:@"tradeit-test-api-key"
+        onCompletion:^(NSArray *sessions) {
+        NSDictionary * firstSession = [sessions objectAtIndex: 0];
+        NSString * sessionToken = [firstSession valueForKey:@"token"];
+        NSString * accountNumber = [firstSession valueForKey:@"accountNumber"];
+        
+        //use sessionToken with anything here:  https://www.trade.it/documentation/api
+        //or to use with the existing services in the library
+        
+        TradeItConnector * myConnector = [[TradeItConnector alloc] initWithApiKey: @"tradeit-test-api-key"];
+        
+        TradeItSession * mySession = [[TradeItSession alloc] initWithConnector: myConnector];
+        mySession.token = sessionToken;
+        
+        TradeItGetPositionsRequest * positionRequest = [[TradeItGetPositionsRequest alloc] initWithAccountNumber:accountNumber];
+        
+        TradeItPositionService * positionRequester = [[TradeItPositionService alloc] initWithSession: mySession];
+        
+        [positionRequester getAccountPositions: positionRequest withCompletionBlock:^(TradeItResult * result) {
+             //update UI with position data
+        }]; 
+    }];
+    
+##Launch the Account Setup screen
+<img src="https://www.trade.it/images/guide/login flow.png" width="200">
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
@@ -99,16 +124,7 @@ For more information, visit https://www.trade.it/documentation/api#PreviewTrade
     [TradeItTicketController showAccountsWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
     }
 
-##Launch Login flow
-<img src="https://www.trade.it/images/guide/onboarding.png" width="200">
-
-    #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
-    
-    - (IBAction)launchAuthOnly:(id)sender {
-    [TradeItTicketController showAuthenticationWithApiKey: @"tradeit-test-api-key" viewController: self onCompletion: nil];
-    }
-
-##Launch to Open Account screen
+##Launch the Promotional Broker Center
 <img src="https://www.trade.it/images/guide/broker_center.jpg" width="200">
 
 Before launching the Open Account screen, TradeIt needs to retrieve configuration data. For best performance, call the following method sometime before launching the screen:
@@ -124,7 +140,7 @@ Before launching the Open Account screen, TradeIt needs to retrieve configuratio
 
 *The onLoad callback passes a boolean that determines whether the Open Account feature is available.
 
-To launch the Open Account screen itself:
+To launch the Broker Center screen itself:
 
     #import <TradeItIosTicketSDK/TradeItIosTicketSDK.h>
     
