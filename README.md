@@ -1,4 +1,8 @@
-# Latest Version 2.3.2
+# Latest Version 2.3.3
+
+- Support for SGX
+
+# Version 2.3.2
 
 - Adds ability to retrieve sessions for every linked account
 
