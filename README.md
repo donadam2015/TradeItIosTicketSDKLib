@@ -1,4 +1,9 @@
-# Latest Version 2.3.3
+# Latest Version 2.3.4
+
+- Support for styling text in alert views
+- Bug fix for switching tabs in portfolio mode
+
+# Version 2.3.3
 
 - Support for SGX
 
